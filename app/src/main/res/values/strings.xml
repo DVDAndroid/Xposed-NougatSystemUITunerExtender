@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Nougat SystemUI Tuner Extender</string>
+    <string name="xposedDescription">This module allows you extend Nougat\'s Tuner Settings</string>
+</resources>
