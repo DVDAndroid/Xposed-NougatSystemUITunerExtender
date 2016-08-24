@@ -7,12 +7,13 @@ This Xposed Module allows you to extends the SystemUI Tuner of Android 7.0 Nouga
 
 It will work when Xposed Framework for Android 7.0 is released
 
-## Screenshots
+## Expected result
 
 Result should be like this:
 
 <img src="http://www.androidpolice.com/wp-content/uploads/2016/08/nexus2cee_NavbarHero.png" />
 
+<img src="http://www.androidpolice.com/wp-content/uploads/2016/08/nexus2cee_Screenshot_20160824-004403.png" />
 
 ## Info
 
