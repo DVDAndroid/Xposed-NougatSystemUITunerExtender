@@ -15,6 +15,8 @@ Result should be like this:
 
 <img src="http://www.androidpolice.com/wp-content/uploads/2016/08/nexus2cee_Screenshot_20160824-004403.png" />
 
+<img src="http://www1-lw.xda-cdn.com/files/2016/08/nexus2cee_Screenshot_20160415-165207.png" />
+
 ## Info
 
 Reverted commits:
@@ -24,3 +26,5 @@ Reverted commits:
 [Remove color and appearance. (52c66d74d13f26e2aea578f6f4308250cb958f67)](https://github.com/android/platform_frameworks_base/commit/52c66d74d13f26e2aea578f6f4308250cb958f67) << Restore color and appearance section
 
 [The lights go down on dark theme. (b4a253bc5af3172dee3d4ac8cf1c4a566f695c41)](https://github.com/android/platform_frameworks_base/commit/b4a253bc5af3172dee3d4ac8cf1c4a566f695c41) << Restore dark theme!
+
+[Remove RemoteInput on lockscreen setting. (38e4e5dca62fabaf20ea3c72a23a8e784d4aa186)](https://github.com/android/platform_packages_apps_settings/commit/38e4e5dca62fabaf20ea3c72a23a8e784d4aa186) << Restore quick reply on lockscreen
