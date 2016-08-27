@@ -65,9 +65,11 @@ public class QuickReplyLockScreenHook {
     private static final String RESTRICTED_ITEM_CLASS = "com.android.settings.RestrictedListPreference.RestrictedItem";
 
     private static int redactionInterstitialLayout;
+    private static int lockScreenNotificationsTitle;
 
     public static void hookRes(XC_InitPackageResources.InitPackageResourcesParam resParam) {
         redactionInterstitialLayout = resParam.res.getIdentifier("redaction_interstitial", "layout", XposedMod.SETTINGS_PKG_NAME);
+        lockScreenNotificationsTitle = resParam.res.getIdentifier("lock_screen_notifications_title", "string", XposedMod.SETTINGS_PKG_NAME);
     }
 
     public static void hookPackage(final XC_LoadPackage.LoadPackageParam lpparam) throws Throwable {
@@ -206,6 +208,8 @@ public class QuickReplyLockScreenHook {
                 Object mLockscreen = newInstance(NotificationLockscreenPreference, screen.getContext(), null);
 
                 callMethod(mLockscreen, "setKey", "lock_screen_notifications");
+                callMethod(mLockscreen, "setSummary", "%s");
+                callMethod(mLockscreen, "setTitle", callMethod(param.thisObject, "getString", lockScreenNotificationsTitle));
 
                 Context mContext = (Context) getObjectField(param.thisObject, "mContext");
                 Object myUserId = callMethod(UserHandle.class, "myUserId");
@@ -231,6 +235,8 @@ public class QuickReplyLockScreenHook {
 
                 callMethod(mLockscreenProfile, "setKey", "lock_screen_notifications_profile");
                 callMethod(mLockscreenProfile, "setUserId", mProfileChallengeUserId);
+                callMethod(mLockscreenProfile, "setSummary", "%s");
+                callMethod(mLockscreenProfile, "setTitle", callMethod(param.thisObject, "getString", lockScreenNotificationsTitle));
 
                 Context mContext = (Context) getObjectField(param.thisObject, "mContext");
 
